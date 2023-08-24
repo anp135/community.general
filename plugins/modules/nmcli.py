@@ -70,7 +70,7 @@ options:
             - If you want to control non-ethernet connection attached to V(bond), V(bridge), or V(team) consider using O(slave_type) option.
         type: str
         choices: [ bond, bond-slave, bridge, bridge-slave, dummy, ethernet, generic, gre, infiniband, ipip, macvlan, sit, team, team-slave, vlan, vxlan,
-            wifi, gsm, wireguard, vpn ]
+            wifi, gsm, wireguard, vpn, loopback ]
     mode:
         description:
             - This is the type of device or network connection that you wish to create for a bond or bridge.
@@ -2400,6 +2400,7 @@ def main():
                           'macvlan',
                           'wireguard',
                           'vpn',
+                          'loopback',
                       ]),
             ip4=dict(type='list', elements='str'),
             gw4=dict(type='str'),
